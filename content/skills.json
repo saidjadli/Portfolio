@@ -1,0 +1,57 @@
+[
+    {
+        "category": "Languages",
+        "items": [
+            "Python",
+            "C++",
+            "SQL",
+            "HTML",
+            "CSS"
+        ]
+    },
+    {
+        "category": "Data Science & ML",
+        "items": [
+            "Pandas",
+            "NumPy",
+            "Scikit-Learn",
+            "TensorFlow",
+            "PyTorch",
+            "Spark",
+            "Hadoop",
+            "YOLO",
+            "OpenCV"
+        ]
+    },
+    {
+        "category": "Tools & Platforms",
+        "items": [
+            "Tableau",
+            "Power BI",
+            "Git",
+            "Docker",
+            "Linux",
+            "MySQL",
+            "UML",
+            "Merise"
+        ]
+    },
+    {
+        "category": "Soft Skills",
+        "items": [
+            "Leadership",
+            "Teamwork",
+            "Problem Solving",
+            "Communication",
+            "Adaptability"
+        ]
+    },
+    {
+        "category": "Languages Spoken",
+        "items": [
+            "Arabic",
+            "English",
+            "French"
+        ]
+    }
+]

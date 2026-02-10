@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "satellite-image-super-resolution",
+        "title": "Satellite Image Super-Resolution using Deep Learning",
+        "summary": "Developed a 4x super-resolution system for satellite imagery using advanced GAN and CNN architectures.",
+        "category": "Computer Vision",
+        "tags": [
+            "PyTorch",
+            "SRCNN",
+            "SRResNet",
+            "ESRGAN",
+            "Deep Learning"
+        ],
+        "date": "Jan 2026",
+        "githubUrl": "https://github.com/saidjadli",
+        "demoUrl": null,
+        "featured": true,
+        "details": {
+            "problem": "Low-resolution satellite imagery limits the accuracy of remote sensing applications such as urban planning and environmental monitoring.",
+            "dataset": "Standard super-resolution benchmark datasets (Div2K, Flickr2K) adapted for satellite imagery.",
+            "approach": "Implemented and compared multiple architectures (SRCNN, SRResNet, EDSR, ESRGAN). Proposed a novel multi-scale, frequency-separated model to enhance detail reconstruction.",
+            "results": "Achieved competitive performance across PSNR, SSIM, and LPIPS metrics, significantly improving visual quality of 4x upscaled images.",
+            "limitations": "Inference time for GAN-based models remains a challenge for real-time applications on edge devices."
+        }
+    },
+    {
+        "slug": "automatic-license-plate-recognition",
+        "title": "Automatic License Plate Recognition (LPR)",
+        "summary": "Real-time interactive platform for detecting and recognizing vehicle license plates.",
+        "category": "Computer Vision",
+        "tags": [
+            "YOLO",
+            "OpenCV",
+            "Tesseract OCR",
+            "Python"
+        ],
+        "date": "May 2025",
+        "githubUrl": "https://github.com/saidjadli",
+        "demoUrl": null,
+        "featured": true,
+        "details": {
+            "problem": "Manual vehicle tracking is inefficient and prone to errors. Automated systems need to be robust to varying lighting and angles.",
+            "dataset": "Custom dataset of vehicle images collected under various conditions, annotated for license plate detection.",
+            "approach": "Built a pipeline using YOLO for object detection to locate plates and Tesseract OCR for character recognition. Integrated into an interactive platform for real-time video processing.",
+            "results": "Successfully detected and recognized plates with high accuracy in real-time video streams, outputting annotated visual results.",
+            "limitations": "OCR accuracy drops in low-light conditions or with dirty/obscured plates."
+        }
+    },
+    {
+        "slug": "rainfall-prediction",
+        "title": "Rainfall Prediction — Rain in Australia",
+        "summary": "Machine Learning pipeline to predict rainfall occurrence based on daily weather observations.",
+        "category": "Machine Learning",
+        "tags": [
+            "Pandas",
+            "Scikit-Learn",
+            "Random Forest",
+            "SVM"
+        ],
+        "date": "Jan 2025",
+        "githubUrl": "https://github.com/saidjadli",
+        "demoUrl": null,
+        "featured": true,
+        "details": {
+            "problem": "Accurate rainfall prediction is crucial for agriculture and water resource management.",
+            "dataset": "Rain in Australia dataset containing daily weather observations from numerous weather stations.",
+            "approach": "Performed data cleaning and feature engineering. Trained and evaluated multiple models including Random Forest, SVM, Naive Bayes, and Logistic Regression.",
+            "results": "Achieved 84% prediction accuracy with the optimized Random Forest model.",
+            "limitations": "Model performance varies by region due to localized climate micro-patterns."
+        }
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "id": "exp-1",
+        "role": "Internship",
+        "company": "Startup NHANCIT",
+        "location": "Technopark Casablanca",
+        "startDate": "Jul 2025",
+        "endDate": "Sep 2025",
+        "current": false,
+        "description": [
+            "Designed and built an LLM-based chatbot prototype to analyze and interpret employee behavior data.",
+            "Integrated advanced language models (Gemma-3-12B) to process key behavioral indicators (KBI).",
+            "Automated the generation of insights from internal reporting data using RAG and NL2SQL techniques."
+        ],
+        "tech": [
+            "Python",
+            "LangChain",
+            "Gemma-3-12B",
+            "Streamlit",
+            "FastAPI",
+            "MySQL",
+            "RAG"
+        ]
+    }
+]

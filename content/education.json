@@ -1,0 +1,26 @@
+[
+    {
+        "school": "National School of Applied Sciences of Tetouan (ENSATE)",
+        "degree": "Engineering Cycle in Data Science, Big Data & Artificial Intelligence",
+        "location": "Tetouan, Morocco",
+        "startDate": "2025",
+        "endDate": "Present",
+        "description": "Specializing in advanced machine learning, big data architectures, and AI systems."
+    },
+    {
+        "school": "National School of Applied Sciences of Tetouan (ENSATE)",
+        "degree": "Integrated Preparatory Cycle",
+        "location": "Tetouan, Morocco",
+        "startDate": "2023",
+        "endDate": "2025",
+        "description": "Intensive foundation in mathematics, physics, and computer science."
+    },
+    {
+        "school": "Lycée Akensous",
+        "degree": "Baccalaureate in Physical Sciences",
+        "location": "Essaouira, Morocco",
+        "startDate": "2021",
+        "endDate": "2021",
+        "description": "Graduated with Very Good Honors."
+    }
+]
