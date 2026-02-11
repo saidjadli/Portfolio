@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -35,8 +36,16 @@ export function Navbar() {
             )}
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link href="/" className="text-xl font-bold font-mono tracking-tighter">
-                    &lt;Jadli<span className="text-primary">Said</span> /&gt;
+                <Link href="/" className="flex items-center gap-2 text-xl font-bold font-mono tracking-tighter">
+                    <Image
+                        src="/images/logo.png"
+                        alt="Jadli Said Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 object-contain"
+                        priority
+                    />
+                    <span>&lt;Jadli<span className="text-primary">Said</span> /&gt;</span>
                 </Link>
 
                 {/* Desktop Menu */}

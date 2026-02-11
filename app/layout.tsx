@@ -10,6 +10,20 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
     title: "Jadli Said | Data Scientist & ML Engineer",
     description: "Portfolio of Jadli Said - Data Scientist & Machine Learning Engineer based in Tetouan, Morocco.",
+    icons: {
+        icon: "/images/logo.png",
+        apple: "/images/logo.png",
+    },
+    openGraph: {
+        images: [
+            {
+                url: "/images/logo.png",
+                width: 1200,
+                height: 630,
+                alt: "Jadli Said Portfolio",
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
