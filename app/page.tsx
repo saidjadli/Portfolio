@@ -1,4 +1,4 @@
-import { Hero } from "@/components/home/Hero";
+import { HeroV2 } from "@/components/home/HeroV2";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { ExperiencePreview } from "@/components/home/ExperiencePreview";
 import { SkillsGrid } from "@/components/home/SkillsGrid";
@@ -15,7 +15,7 @@ export default async function Home() {
 
     return (
         <div className="flex flex-col gap-10">
-            <Hero />
+            <HeroV2 />
             <FeaturedProjects projects={featuredProjects} />
             <SkillsGrid skills={skills} />
             <ExperiencePreview experience={recentExperience} />
