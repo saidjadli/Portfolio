@@ -4,6 +4,8 @@ import { ExperiencePreview } from "@/components/home/ExperiencePreview";
 import { SkillsGrid } from "@/components/home/SkillsGrid";
 import { getProjects, getExperience, getSkills } from "@/lib/data";
 
+import { AboutSection } from "@/components/home/AboutSection";
+
 export default async function Home() {
     const projects = await getProjects();
     const experience = await getExperience();
@@ -16,6 +18,7 @@ export default async function Home() {
     return (
         <div className="flex flex-col gap-10">
             <HeroV2 />
+            <AboutSection />
             <FeaturedProjects projects={featuredProjects} />
             <SkillsGrid skills={skills} />
             <ExperiencePreview experience={recentExperience} />

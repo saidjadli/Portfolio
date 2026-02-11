@@ -50,8 +50,7 @@ export function HeroV2() {
                             transition={{ delay: 0.4, duration: 0.5 }}
                             className="text-lg md:text-xl text-gray-400 max-w-xl mb-8 leading-relaxed"
                         >
-                            passionate about AI and large-scale data. I design end-to-end machine learning solutions—from data processing to modeling—to deliver practical impact for businesses and society.
-                        </motion.p>
+                        focused on Machine Learning, Deep Learning, and Big Data turning complex data into scalable, real-world solutions.                        </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
