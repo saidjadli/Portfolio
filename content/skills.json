@@ -20,7 +20,8 @@
             "Spark",
             "Hadoop",
             "YOLO",
-            "OpenCV"
+            "OpenCV",
+            "Keras"
         ]
     },
     {
