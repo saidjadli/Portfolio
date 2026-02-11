@@ -7,23 +7,26 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "@/components/i18n/LanguageProvider";
 
 const greatVibes = Great_Vibes({
     weight: "400",
     subsets: ["latin"]
 });
 
-const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "Experience", href: "/experience" },
-    { name: "Contact", href: "/contact" },
-];
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+    const { t } = useTranslation();
+
+    const navItems = [
+        { name: t("navbar.home"), href: "/" },
+        { name: t("navbar.projects"), href: "/projects" },
+        { name: t("navbar.experience"), href: "/experience" },
+        { name: t("navbar.contact"), href: "/contact" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -66,7 +69,7 @@ export function Navbar() {
                         className="px-4 py-2 border border-primary/20 rounded-lg text-primary text-sm font-medium hover:bg-primary/10 transition-colors"
                         target="_blank"
                     >
-                        Resume
+                        {t("navbar.resume")}
                     </Link>
                 </nav>
 
@@ -107,7 +110,7 @@ export function Navbar() {
                                 className="inline-block text-center py-3 border border-primary/20 rounded-lg text-primary font-medium hover:bg-primary/10 transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
-                                Download Resume
+                                {t("navbar.downloadResume")}
                             </Link>
                         </nav>
                     </motion.div>

@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 import { Great_Vibes } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/components/i18n/LanguageProvider";
 
 const greatVibes = Great_Vibes({
     weight: "400",
@@ -10,6 +13,8 @@ const greatVibes = Great_Vibes({
 });
 
 export function Footer() {
+    const { t } = useTranslation();
+
     return (
         <footer className="border-t border-white/5 bg-black/20 py-12 mt-20">
             <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -20,7 +25,7 @@ export function Footer() {
                         </span>
                     </Link>
                     <p className="text-sm text-gray-500">
-                        © {new Date().getFullYear()} Jadli Said. All rights reserved.
+                        © {new Date().getFullYear()} {t("footer.rights")}
                     </p>
                 </div>
 

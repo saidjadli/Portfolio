@@ -4,6 +4,8 @@ import "./globals.css";
 import clsx from "clsx";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { LanguageProvider } from "@/components/i18n/LanguageProvider";
+import { FloatingLanguageSwitcher } from "@/components/i18n/FloatingLanguageSwitcher";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -34,11 +36,14 @@ export default function RootLayout({
     return (
         <html lang="en" className="scroll-smooth">
             <body className={clsx(inter.variable, "font-sans antialiased bg-[#0B0F0E] text-[#F3F4F6] flex flex-col min-h-screen")}>
-                <Navbar />
-                <main className="flex-grow pt-16">
-                    {children}
-                </main>
-                <Footer />
+                <LanguageProvider>
+                    <Navbar />
+                    <main className="flex-grow pt-16">
+                        {children}
+                    </main>
+                    <Footer />
+                    <FloatingLanguageSwitcher />
+                </LanguageProvider>
             </body>
         </html>
     );

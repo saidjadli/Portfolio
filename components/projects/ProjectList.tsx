@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Github, ExternalLink, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "@/components/i18n/LanguageProvider";
 
 interface ProjectListProps {
     initialProjects: Project[];
@@ -16,8 +17,10 @@ interface ProjectListProps {
 export function ProjectList({ initialProjects }: ProjectListProps) {
     const [filter, setFilter] = useState("All");
     const [search, setSearch] = useState("");
+    const { t } = useTranslation();
 
     const categories = ["All", ...Array.from(new Set(initialProjects.map((p) => p.category)))];
+
 
     const filteredProjects = useMemo(() => {
         return initialProjects.filter((project) => {
@@ -40,11 +43,11 @@ export function ProjectList({ initialProjects }: ProjectListProps) {
                             key={category}
                             onClick={() => setFilter(category)}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filter === category
-                                    ? "bg-primary text-background"
-                                    : "bg-white/5 text-gray-400 hover:bg-white/10"
+                                ? "bg-primary text-background"
+                                : "bg-white/5 text-gray-400 hover:bg-white/10"
                                 }`}
                         >
-                            {category}
+                            {category === "All" ? t("projects.filterAll") : category}
                         </button>
                     ))}
                 </div>

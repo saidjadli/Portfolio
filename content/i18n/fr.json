@@ -1,0 +1,68 @@
+{
+    "navbar": {
+        "home": "Accueil",
+        "projects": "Projets",
+        "experience": "Expérience",
+        "contact": "Contact",
+        "resume": "CV",
+        "downloadResume": "Télécharger le CV"
+    },
+    "hero": {
+        "greeting": "Salut, je suis Said Jadli",
+        "title1": "DATA",
+        "title2": "SCIENTIST",
+        "title3": "ÉTUDIANT INGÉNIEUR",
+        "subtitle": "axé sur le Machine Learning, le Deep Learning et le Big Data, transformant des données complexes en solutions concrètes et évolutives.",
+        "btnDownload": "Télécharger le CV",
+        "btnProjects": "Voir les Projets",
+        "btnContact": "Me Contacter"
+    },
+    "about": {
+        "title": "À propos",
+        "body": "Je suis Jadli Said, étudiant ingénieur spécialisé en Big Data, Data Science et Intelligence Artificielle. Passionné par le monde des données et de l'IA, je poursuis actuellement mes études d'ingénieur afin de développer une expertise solide dans le traitement massif de données, le Machine Learning, le Deep Learning et les technologies d'analyse avancée. Je m'engage profondément à explorer les dernières innovations en Big Data et Intelligence Artificielle, avec l'ambition de fournir des solutions intelligentes aux défis complexes d'aujourd'hui. Mon objectif est d'exploiter la puissance des données et des algorithmes pour transformer l'information en réelle valeur ajoutée, que ce soit pour les entreprises ou la société dans son ensemble. Convaincu que l'avenir appartient à ceux qui maîtrisent les données, je m'engage à construire des systèmes plus efficaces, plus intelligents et plus responsables. Curieux, rigoureux et passionné, je suis constamment à la recherche de nouvelles opportunités pour innover, apprendre et contribuer à des projets à fort impact. Ouvert aux collaborations, aux échanges professionnels et aux opportunités de projets ambitieux, je suis prêt à relever de nouveaux défis.",
+        "focusTitle": "Domaines de focalisation",
+        "bullet1": "Machine Learning & Deep Learning (expérimentation, évaluation, développement de modèles)",
+        "bullet2": "Big Data & Ingénierie des données (Spark, SQL, pipelines évolutifs)",
+        "bullet3": "Applications pratiques de l'IA (tableaux de bord, API, outils LLM comme RAG/NL2SQL)"
+    },
+    "projects": {
+        "title": "Projets",
+        "subtitle": "Une collection de mes travaux récents en science des données, apprentissage automatique et développement logiciel.",
+        "filterAll": "Tous",
+        "viewProject": "Voir le Projet",
+        "liveDemo": "Démo en Direct",
+        "sourceCode": "Code Source"
+    },
+    "experience": {
+        "title": "Expérience",
+        "subtitle": "Mon parcours professionnel en science des données et apprentissage automatique.",
+        "present": "Présent"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Contactez-moi pour des opportunités ou des collaborations.",
+        "heading": "Restons en Contact",
+        "description": "Je recherche actuellement de nouvelles opportunités en tant que Data Scientist ou Ingénieur Machine Learning. Que vous ayez une question ou que vous vouliez simplement dire bonjour, je ferai de mon mieux pour vous répondre !",
+        "noteTitle": "Note aux Recruteurs",
+        "noteBody": "Je suis disponible pour des stages et des postes à temps plein à partir de l'été 2024. Veuillez inclure la description du poste dans votre message.",
+        "formName": "Nom",
+        "formEmail": "Email",
+        "formMessage": "Message",
+        "formSend": "Envoyer le Message",
+        "formSending": "Envoi en cours...",
+        "formPlaceholderName": "Jean Dupont",
+        "formPlaceholderEmail": "jean@exemple.com",
+        "formPlaceholderMessage": "Bonjour, j'aimerais discuter...",
+        "successTitle": "Message Envoyé !",
+        "successBody": "Merci de m'avoir contacté. Je vous répondrai bientôt.",
+        "successAnother": "Envoyer un autre message",
+        "formDemo": "Ce formulaire est une démo. Utilisez l'email ci-dessus pour me contacter."
+    },
+    "footer": {
+        "rights": "Jadli Said. Tous droits réservés."
+    },
+    "skills": {
+        "title": "Compétences",
+        "subtitle": "Technologies et outils avec lesquels je travaille."
+    }
+}

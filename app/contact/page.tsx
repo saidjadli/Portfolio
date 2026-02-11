@@ -5,9 +5,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Mail, Send } from "lucide-react";
+import { useTranslation } from "@/components/i18n/LanguageProvider";
 
 export default function ContactPage() {
     const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
+    const { t } = useTranslation();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -20,14 +22,13 @@ export default function ContactPage() {
 
     return (
         <div className="container px-4 md:px-6 py-20 max-w-4xl mx-auto">
-            <SectionHeading title="Contact" subtitle="Get in touch for opportunities or collaborations." />
+            <SectionHeading title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
             <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+                    <h3 className="text-2xl font-bold mb-6">{t("contact.heading")}</h3>
                     <p className="text-gray-400 mb-8 text-lg">
-                        I'm currently looking for new opportunities as a Data Scientist or Machine Learning Engineer.
-                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        {t("contact.description")}
                     </p>
 
                     <div className="flex items-center gap-4 text-gray-300 mb-10 group cursor-pointer">
@@ -38,10 +39,9 @@ export default function ContactPage() {
                     </div>
 
                     <Card className="bg-primary/5 border-primary/20 p-6">
-                        <h4 className="font-bold text-primary mb-2">Note to Recruters</h4>
+                        <h4 className="font-bold text-primary mb-2">{t("contact.noteTitle")}</h4>
                         <p className="text-sm text-gray-400">
-                            I am available for internships and full-time positions starting Summer 2024.
-                            Please include the job description in your message.
+                            {t("contact.noteBody")}
                         </p>
                     </Card>
                 </div>
@@ -52,60 +52,60 @@ export default function ContactPage() {
                             <div className="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <Send size={32} />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                            <p className="text-gray-400">Thanks for reaching out. I'll get back to you soon.</p>
+                            <h3 className="text-2xl font-bold text-white mb-2">{t("contact.successTitle")}</h3>
+                            <p className="text-gray-400">{t("contact.successBody")}</p>
                             <button
                                 onClick={() => setFormState("idle")}
                                 className="mt-6 text-primary hover:underline text-sm"
                             >
-                                Send another message
+                                {t("contact.successAnother")}
                             </button>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-                                    Name
+                                    {t("contact.formName")}
                                 </label>
                                 <input
                                     type="text"
                                     id="name"
                                     required
                                     className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                                    placeholder="John Doe"
+                                    placeholder={t("contact.formPlaceholderName")}
                                 />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-                                    Email
+                                    {t("contact.formEmail")}
                                 </label>
                                 <input
                                     type="email"
                                     id="email"
                                     required
                                     className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                                    placeholder="john@example.com"
+                                    placeholder={t("contact.formPlaceholderEmail")}
                                 />
                             </div>
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-                                    Message
+                                    {t("contact.formMessage")}
                                 </label>
                                 <textarea
                                     id="message"
                                     required
                                     rows={4}
                                     className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
-                                    placeholder="Hello, I'd like to discuss..."
+                                    placeholder={t("contact.formPlaceholderMessage")}
                                 />
                             </div>
 
                             <Button type="submit" className="w-full" disabled={formState === "submitting"}>
-                                {formState === "submitting" ? "Sending..." : "Send Message"}
+                                {formState === "submitting" ? t("contact.formSending") : t("contact.formSend")}
                             </Button>
 
                             <p className="text-xs text-gray-500 text-center mt-4">
-                                This form is a demo. Use the email above to contact me.
+                                {t("contact.formDemo")}
                             </p>
                         </form>
                     )}

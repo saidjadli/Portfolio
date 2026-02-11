@@ -1,0 +1,68 @@
+{
+    "navbar": {
+        "home": "Home",
+        "projects": "Projects",
+        "experience": "Experience",
+        "contact": "Contact",
+        "resume": "Resume",
+        "downloadResume": "Download Resume"
+    },
+    "hero": {
+        "greeting": "Hi, I'm Said Jadli",
+        "title1": "DATA",
+        "title2": "SCIENTIST",
+        "title3": "ENGINEERING STUDENT",
+        "subtitle": "focused on Machine Learning, Deep Learning, and Big Data turning complex data into scalable, real-world solutions.",
+        "btnDownload": "Download CV",
+        "btnProjects": "View Projects",
+        "btnContact": "Contact Me"
+    },
+    "about": {
+        "title": "About",
+        "body": "I am Jadli Said, an engineering student specializing in Big Data, Data Science, and Artificial Intelligence. Passionate about the world of data and AI, I am currently pursuing my engineering studies to develop strong expertise in massive data processing, Machine Learning, Deep Learning, and advanced analytics technologies. I am deeply engaged in exploring the latest innovations in Big Data and Artificial Intelligence, with the ambition of delivering intelligent solutions to today's complex challenges. My goal is to harness the power of data and algorithms to transform information into real added value, whether for businesses or society as a whole. Convinced that the future belongs to those who master data, I am committed to building systems that are more efficient, more intelligent, and more responsible. Curious, rigorous, and passionate, I am constantly seeking new opportunities to innovate, learn, and contribute to high-impact projects. Open to collaborations, professional exchanges, and ambitious project opportunities, I am ready to take on new challenges.",
+        "focusTitle": "Focus Areas",
+        "bullet1": "Machine Learning & Deep Learning (experimentation, evaluation, model development)",
+        "bullet2": "Big Data & Data Engineering (Spark, SQL, scalable pipelines)",
+        "bullet3": "Practical AI Applications (dashboards, APIs, LLM tools like RAG/NL2SQL)"
+    },
+    "projects": {
+        "title": "Projects",
+        "subtitle": "A collection of my recent work in data science, machine learning, and software development.",
+        "filterAll": "All",
+        "viewProject": "View Project",
+        "liveDemo": "Live Demo",
+        "sourceCode": "Source Code"
+    },
+    "experience": {
+        "title": "Experience",
+        "subtitle": "My professional journey in data science and machine learning.",
+        "present": "Present"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Get in touch for opportunities or collaborations.",
+        "heading": "Let's Connect",
+        "description": "I'm currently looking for new opportunities as a Data Scientist or Machine Learning Engineer. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+        "noteTitle": "Note to Recruters",
+        "noteBody": "I am available for internships and full-time positions starting Summer 2024. Please include the job description in your message.",
+        "formName": "Name",
+        "formEmail": "Email",
+        "formMessage": "Message",
+        "formSend": "Send Message",
+        "formSending": "Sending...",
+        "formPlaceholderName": "John Doe",
+        "formPlaceholderEmail": "john@example.com",
+        "formPlaceholderMessage": "Hello, I'd like to discuss...",
+        "successTitle": "Message Sent!",
+        "successBody": "Thanks for reaching out. I'll get back to you soon.",
+        "successAnother": "Send another message",
+        "formDemo": "This form is a demo. Use the email above to contact me."
+    },
+    "footer": {
+        "rights": "Jadli Said. All rights reserved."
+    },
+    "skills": {
+        "title": "Skills",
+        "subtitle": "Technologies and tools I work with."
+    }
+}
