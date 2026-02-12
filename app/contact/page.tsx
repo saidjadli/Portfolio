@@ -8,11 +8,14 @@ import { Mail, Send } from "lucide-react";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 
 export default function ContactPage() {
-    const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    type Status = "idle" | "loading" | "success" | "error";
+    const [status, setStatus] = useState<Status>("idle");
     const [errorMessage, setErrorMessage] = useState("");
     const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
     const [lastSubmitTime, setLastSubmitTime] = useState(0);
     const { t } = useTranslation();
+
+    console.log("DEBUG: ContactPage Rendering. Status:", status);
 
     const validateForm = (data: { name: string; email: string; message: string }) => {
         const errors: { [key: string]: string } = {};
@@ -50,11 +53,11 @@ export default function ContactPage() {
         const now = Date.now();
         if (now - lastSubmitTime < 3000) {
             setErrorMessage("Please wait a moment before submitting again.");
-            setFormState("error");
+            setStatus("error");
             return;
         }
 
-        setFormState("submitting");
+        setStatus("loading");
 
         try {
             const response = await fetch("/api/contact", {
@@ -65,24 +68,22 @@ export default function ContactPage() {
                 body: JSON.stringify(data),
             });
 
-            // Defensive JSON parsing
+            // Robust JSON parsing
             let result: any = null;
             try {
                 result = await response.json();
             } catch (parseError) {
-                console.error("Failed to parse response JSON:", parseError);
+                // If JSON fails, result remains null
             }
 
-            // Debug logging in development
-            if (process.env.NODE_ENV === "development") {
-                console.log("Contact API status:", response.status);
-                console.log("Contact API response:", result);
-            }
-
-            // Treat as success if status is 2xx, even if JSON is missing or success field is true
-            if (response.ok && (result?.success === true || result === null)) {
-                setFormState("success");
+            // Treat as success if status is 2xx
+            if (response.ok) {
+                setStatus("success");
                 setLastSubmitTime(now);
+                setErrorMessage("");
+                // Form reset is handled by unmounting/remounting or explicit reset if needed,
+                // but since we switch views, just clearing state is fine. 
+                // However, let's clear the native form just in case we go back without unmounting (unlikely with this UI flow)
                 e.currentTarget.reset();
                 return;
             }
@@ -90,13 +91,24 @@ export default function ContactPage() {
             // Handle error
             const message = result?.error || "An unexpected error occurred. Please try again later.";
             setErrorMessage(message);
-            setFormState("error");
+            setStatus("error");
+
         } catch (error) {
-            // Network error or fetch failure
+            // Network error
             console.error("Contact form submission error:", error);
-            setFormState("error");
+            setStatus("error");
             setErrorMessage("An unexpected error occurred. Please try again later.");
         }
+    };
+
+    const handleRetry = () => {
+        setStatus("idle");
+        setErrorMessage("");
+    };
+
+    const handleReset = () => {
+        setStatus("idle");
+        setErrorMessage("");
     };
 
     return (
@@ -126,113 +138,81 @@ export default function ContactPage() {
                 </div>
 
                 <Card className="p-8 bg-white/5 border-white/10">
-                    {formState === "success" ? (
-                        <div className="text-center py-12">
-                            <div className="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Send size={32} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">{t("contact.successTitle")}</h3>
-                            <p className="text-gray-400">{t("contact.successBody")}</p>
-                            <button
-                                onClick={() => setFormState("idle")}
-                                className="mt-6 text-primary hover:underline text-sm"
-                            >
-                                {t("contact.successAnother")}
-                            </button>
-                        </div>
-                    ) : formState === "error" ? (
-                        <div className="text-center py-12">
-                            <div className="w-16 h-16 bg-red-500/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Mail size={32} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Oops! Something went wrong</h3>
-                            <p className="text-gray-400 mb-4">{errorMessage}</p>
-                            <button
-                                onClick={() => {
-                                    setFormState("idle");
-                                    setErrorMessage("");
-                                }}
-                                className="text-primary hover:underline text-sm"
-                            >
-                                Try again
-                            </button>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-                                    {t("contact.formName")}
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    className={`w-full bg-black/20 border ${fieldErrors.name ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all`}
-                                    placeholder={t("contact.formPlaceholderName")}
-                                />
-                                {fieldErrors.name && <p className="text-red-500 text-xs mt-1">{fieldErrors.name}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-                                    {t("contact.formEmail")}
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    className={`w-full bg-black/20 border ${fieldErrors.email ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all`}
-                                    placeholder={t("contact.formPlaceholderEmail")}
-                                />
-                                {fieldErrors.email && <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-                                    {t("contact.formMessage")}
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    rows={4}
-                                    className={`w-full bg-black/20 border ${fieldErrors.message ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none`}
-                                    placeholder={t("contact.formPlaceholderMessage")}
-                                />
-                                {fieldErrors.message && <p className="text-red-500 text-xs mt-1">{fieldErrors.message}</p>}
-                            </div>
 
-                            {/* Honeypot field - hidden from users, catches bots */}
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+                                {t("contact.formName")}
+                            </label>
                             <input
                                 type="text"
-                                name="website"
-                                tabIndex={-1}
-                                autoComplete="off"
-                                style={{
-                                    position: "absolute",
-                                    left: "-9999px",
-                                    width: "1px",
-                                    height: "1px",
-                                    opacity: 0,
-                                }}
+                                id="name"
+                                name="name"
+                                required
+                                className={`w-full bg-black/20 border ${fieldErrors.name ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all`}
+                                placeholder={t("contact.formPlaceholderName")}
                             />
+                            {fieldErrors.name && <p className="text-red-500 text-xs mt-1">{fieldErrors.name}</p>}
+                        </div>
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+                                {t("contact.formEmail")}
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                className={`w-full bg-black/20 border ${fieldErrors.email ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all`}
+                                placeholder={t("contact.formPlaceholderEmail")}
+                            />
+                            {fieldErrors.email && <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>}
+                        </div>
+                        <div>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+                                {t("contact.formMessage")}
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                rows={4}
+                                className={`w-full bg-black/20 border ${fieldErrors.message ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none`}
+                                placeholder={t("contact.formPlaceholderMessage")}
+                            />
+                            {fieldErrors.message && <p className="text-red-500 text-xs mt-1">{fieldErrors.message}</p>}
+                        </div>
 
-                            <Button type="submit" className="w-full flex items-center justify-center gap-2" disabled={formState === "submitting"}>
-                                {formState === "submitting" ? (
-                                    <>
-                                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                        {t("contact.formSending") || "Sending..."}
-                                    </>
-                                ) : (
-                                    t("contact.formSend") || "Send Message"
-                                )}
-                            </Button>
+                        {/* Honeypot field - hidden from users, catches bots */}
+                        <input
+                            type="text"
+                            name="website"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            style={{
+                                position: "absolute",
+                                left: "-9999px",
+                                width: "1px",
+                                height: "1px",
+                                opacity: 0,
+                            }}
+                        />
 
-                            <p className="text-xs text-gray-500 text-center mt-4">
+                        <Button type="submit" className="w-full flex items-center justify-center gap-2" disabled={status === "loading"}>
+                            {status === "loading" ? (
+                                <>
+                                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                    {t("contact.formSending") || "Sending..."}
+                                </>
+                            ) : (
+                                t("contact.formSend") || "Send Message"
+                            )}
+                        </Button>
+
+                        {/* <p className="text-xs text-gray-500 text-center mt-4">
                                 {t("contact.formDemo")}
-                            </p>
-                        </form>
-                    )}
+                            </p> */}
+                    </form>
                 </Card>
             </div>
         </div>
