@@ -71,12 +71,43 @@ theme: {
 },
 ```
 
-### 3. Contact Form
-The contact form in `app/contact/page.tsx` is currently a demo. To make it functional, you can:
-- Use [Formspree](https://formspree.io/): Replace the form with their snippet.
-- Use [Resend](https://resend.com/): Implement a server action to send emails.
+### 3. Contact Form Setup
 
-### 4. Resume
+The contact form uses [Resend](https://resend.com/) to send emails. To enable it:
+
+#### Local Development
+
+1. **Sign up for Resend**:
+   - Go to [https://resend.com](https://resend.com) and create a free account.
+   - Navigate to API Keys and create a new API key.
+
+2. **Create `.env.local`**:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+3. **Add your credentials** to `.env.local`:
+   ```env
+   RESEND_API_KEY=re_your_actual_api_key_here
+   CONTACT_TO_EMAIL=your@email.com
+   CONTACT_FROM_EMAIL=Portfolio <onboarding@resend.dev>
+   ```
+
+4. **Restart the dev server** for changes to take effect.
+
+#### Production (Vercel)
+
+1. Go to your project in Vercel.
+2. Navigate to **Settings → Environment Variables**.
+3. Add the following variables:
+   - `RESEND_API_KEY` = Your Resend API key
+   - `CONTACT_TO_EMAIL` = Your email address (where messages will be sent)
+   - `CONTACT_FROM_EMAIL` = `Portfolio <onboarding@resend.dev>`
+4. Redeploy your project.
+
+> **Note**: For production, consider [verifying your domain](https://resend.com/docs/dashboard/domains/introduction) in Resend and using a custom FROM address like `contact@yourdomain.com` instead of `onboarding@resend.dev` for better deliverability.
+
+### 5. Resume
 Replace the `public/resume.pdf` file with your actual resume PDF.
 
 ## Deployment
