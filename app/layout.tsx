@@ -10,8 +10,13 @@ import { FloatingLanguageSwitcher } from "@/components/i18n/FloatingLanguageSwit
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-    title: "Jadli Said | Data Scientist & ML Engineer",
-    description: "Portfolio of Jadli Said - Data Scientist & Machine Learning Engineer based in Tetouan, Morocco.",
+    title: "Jadli Said | Big Data & AI Engineer",
+    description: "Portfolio of Jadli Said, Big Data, Data Science & AI engineering student in Morocco. Projects in Machine Learning, Deep Learning and Networking.",
+    metadataBase: new URL("https://saidjadli.com"),
+    robots: {
+        index: true,
+        follow: true,
+    },
     icons: {
         icon: "/images/logo.png",
         apple: "/images/logo.png",
