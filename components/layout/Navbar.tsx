@@ -25,6 +25,7 @@ export function Navbar() {
         { name: t("navbar.home"), href: "/" },
         { name: t("navbar.projects"), href: "/projects" },
         { name: t("navbar.experience"), href: "/experience" },
+        { name: t("navbar.certificates"), href: "/certificates" },
         { name: t("navbar.contact"), href: "/contact" },
     ];
 

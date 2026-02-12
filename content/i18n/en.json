@@ -3,6 +3,7 @@
         "home": "Home",
         "projects": "Projects",
         "experience": "Experience",
+        "certificates": "Certificates",
         "contact": "Contact",
         "resume": "Resume",
         "downloadResume": "Download Resume"
@@ -64,5 +65,20 @@
     "skills": {
         "title": "Skills",
         "subtitle": "Technologies and tools I work with."
+    },
+    "certificates": {
+        "title": "Certificates",
+        "subtitle": "Professional certifications demonstrating my expertise in data science, machine learning, and modern development tools.",
+        "featuredTitle": "Featured Certificates",
+        "featuredSubtitle": "Key certifications that showcase my technical skills and continuous learning.",
+        "viewAll": "View all certificates",
+        "viewDetails": "View Details",
+        "whatILearned": "What I Learned",
+        "filterAll": "All",
+        "filterDeepLearning": "Deep Learning",
+        "filterMachineLearning": "Machine Learning",
+        "filterTools": "Tools",
+        "filterLanguages": "Languages",
+        "filterSpokenLanguages": "Spoken Languages"
     }
 }

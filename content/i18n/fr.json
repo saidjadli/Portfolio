@@ -3,6 +3,7 @@
         "home": "Accueil",
         "projects": "Projets",
         "experience": "Expérience",
+        "certificates": "Certificats",
         "contact": "Contact",
         "resume": "CV",
         "downloadResume": "Télécharger le CV"
@@ -64,5 +65,20 @@
     "skills": {
         "title": "Compétences",
         "subtitle": "Technologies et outils avec lesquels je travaille."
+    },
+    "certificates": {
+        "title": "Certificats",
+        "subtitle": "Certifications professionnelles démontrant mon expertise en science des données, apprentissage automatique et outils de développement modernes.",
+        "featuredTitle": "Certificats en Vedette",
+        "featuredSubtitle": "Certifications clés qui mettent en valeur mes compétences techniques et mon apprentissage continu.",
+        "viewAll": "Voir tous les certificats",
+        "viewDetails": "Voir les Détails",
+        "whatILearned": "Ce que j'ai Appris",
+        "filterAll": "Tous",
+        "filterDeepLearning": "Deep Learning",
+        "filterMachineLearning": "Machine Learning",
+        "filterTools": "Outils",
+        "filterLanguages": "Langages",
+        "filterSpokenLanguages": "Langues Parlées"
     }
 }

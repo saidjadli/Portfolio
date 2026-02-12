@@ -55,3 +55,15 @@ export interface Profile {
     };
     resumeUrl: string;
 }
+
+export interface Certificate {
+    id: string;
+    title: string;
+    image: string;
+    category: "Deep Learning" | "Machine Learning" | "Languages" | "Spoken Languages" | "Tools";
+    featured: boolean;
+    learned: {
+        en: string[];
+        fr: string[];
+    };
+}

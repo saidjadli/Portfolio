@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { Project, Experience, SkillCategory, Education, Profile } from './types';
+import { Project, Experience, SkillCategory, Education, Profile, Certificate } from './types';
+import { certificates } from '@/data/certificates';
 
 const contentDir = path.join(process.cwd(), 'content');
 
@@ -37,4 +38,12 @@ export async function getEducation(): Promise<Education[]> {
 export async function getProjectBySlug(slug: string): Promise<Project | undefined> {
     const projects = await getProjects();
     return projects.find((p) => p.slug === slug);
+}
+
+export async function getCertificates(): Promise<Certificate[]> {
+    return certificates;
+}
+
+export async function getCertificateById(id: string): Promise<Certificate | undefined> {
+    return certificates.find((c) => c.id === id);
 }
