@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     openGraph: {
         images: [
             {
-                url: "/images/logo.png",
+                url: "/images/logo1.png",
                 width: 1200,
                 height: 630,
                 alt: "Jadli Said Portfolio",
