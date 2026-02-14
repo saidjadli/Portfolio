@@ -18,8 +18,8 @@ export const metadata: Metadata = {
         follow: true,
     },
     icons: {
-        icon: "/images/logo.png",
-        apple: "/images/logo.png",
+        icon: "/images/logo1.png",
+        apple: "/images/logo1.png",
     },
     openGraph: {
         images: [
