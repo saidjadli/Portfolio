@@ -10,28 +10,76 @@ import { FloatingLanguageSwitcher } from "@/components/i18n/FloatingLanguageSwit
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-    title: "Jadli Said | Data science & AI Engineer",
-    description: "Portfolio of Jadli Said, Big Data, Data Science & AI engineering student in Morocco. Projects in Machine Learning, Deep Learning and Networking.",
     metadataBase: new URL("https://saidjadli.com"),
+    title: "Jadli Said | Data Science & AI Engineer",
+    description:
+        "Portfolio of Jadli Said, Big Data, Data Science & AI engineering student in Morocco. Projects in Machine Learning, Deep Learning and Networking.",
+    alternates: {
+        canonical: "https://saidjadli.com",
+    },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+        },
     },
     icons: {
         icon: "/images/logo1.png",
         apple: "/images/logo1.png",
     },
     openGraph: {
+        type: "website",
+        url: "https://saidjadli.com",
+        title: "Jadli Said | Data Science & AI Engineer",
+        description:
+        "Projects in Machine Learning, Deep Learning and Networking.",
         images: [
-            {
-                url: "/images/logo1.png",
-                width: 1200,
-                height: 630,
-                alt: "Jadli Said Portfolio",
-            },
+        {
+            url: "/images/logo1.png",
+            width: 1200,
+            height: 630,
+            alt: "Jadli Said Portfolio",
+        },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Jadli Said | Data Science & AI Engineer",
+        description:
+        "Portfolio: ML, DL, Networking projects.",
+        images: ["/images/logo1.png"],
+    },
 };
+
+
+// export const metadata: Metadata = {
+//     title: "Jadli Said | Data science & AI Engineer",
+//     description: "Portfolio of Jadli Said, Big Data, Data Science & AI engineering student in Morocco. Projects in Machine Learning, Deep Learning and Networking.",
+//     metadataBase: new URL("https://saidjadli.com"),
+//     robots: {
+//         index: true,
+//         follow: true,
+//     },
+//     icons: {
+//         icon: "/images/logo1.png",
+//         apple: "/images/logo1.png",
+//     },
+//     openGraph: {
+//         images: [
+//             {
+//                 url: "/images/logo1.png",
+//                 width: 1200,
+//                 height: 630,
+//                 alt: "Jadli Said Portfolio",
+//             },
+//         ],
+//     },
+// };
 
 export default function RootLayout({
     children,
