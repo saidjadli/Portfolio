@@ -1,6 +1,29 @@
 import { Certificate } from "@/lib/types";
 
-export const certificates: Certificate[] = [
+    export const certificates: Certificate[] = [
+    {
+        id: "power-bi-masterclass-specialization",
+        title: "Power BI Masterclass Specialization",
+        image: "/certificates/power-bi-masterclass.png",
+        category: "Tools",
+        featured: true,
+        learned: {
+            en: [
+                "Mastered the Power BI interface and navigation for efficient data reporting",
+                "Created interactive dashboards and visualizations using Power BI tools",
+                "Applied advanced DAX functions for data analysis and time intelligence calculations",
+                "Transformed and cleaned data using Power Query Editor",
+                "Built and structured data models for business intelligence and reporting"
+            ],
+            fr: [
+                "Maîtrisé l’interface Power BI et sa navigation pour un reporting efficace",
+                "Créé des dashboards et visualisations interactives avec les outils Power BI",
+                "Appliqué des fonctions DAX avancées pour l’analyse de données et le time intelligence",
+                "Transformé et nettoyé les données avec Power Query Editor",
+                "Construit et structuré des modèles de données pour la business intelligence"
+            ]
+        }
+    },
     {
         id: "neural-network-deep-learning",
         title: "Neural Networks and Deep Learning",
@@ -29,7 +52,7 @@ export const certificates: Certificate[] = [
         title: "Python Data Fundamentals",
         image: "/certificates/python data fundamentals.png",
         category: "Machine Learning",
-        featured: true,
+        featured: false,
         learned: {
             en: [
                 "Mastered core Python libraries for data analysis: Pandas, NumPy, and Matplotlib",
