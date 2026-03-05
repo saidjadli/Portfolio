@@ -51,22 +51,22 @@ import { Certificate } from "@/lib/types";
         id: "python-data-fundamentals",
         title: "Python Data Fundamentals",
         image: "/certificates/python data fundamentals.png",
-        category: "Machine Learning",
+        category: "Languages",
         featured: false,
         learned: {
             en: [
-                "Mastered core Python libraries for data analysis: Pandas, NumPy, and Matplotlib",
-                "Performed data cleaning, transformation, and exploratory data analysis (EDA)",
-                "Created insightful visualizations to communicate data findings",
-                "Applied statistical methods for data-driven decision making",
-                "Built a solid foundation for machine learning workflows"
+                "Learned Python fundamentals for data analysis including variables, lists, and functions",
+                "Manipulated and analyzed datasets using pandas DataFrames",
+                "Performed data visualization using Matplotlib and Seaborn",
+                "Applied statistical concepts and exploratory data analysis techniques",
+                "Worked with real-world data projects including data cleaning, merging, and analysis"
             ],
             fr: [
-                "Maîtrisé les bibliothèques Python essentielles pour l'analyse de données : Pandas, NumPy et Matplotlib",
-                "Effectué le nettoyage, la transformation et l'analyse exploratoire des données (EDA)",
-                "Créé des visualisations pertinentes pour communiquer les résultats",
-                "Appliqué des méthodes statistiques pour la prise de décision basée sur les données",
-                "Établi des bases solides pour les workflows d'apprentissage automatique"
+                "Appris les bases de Python pour l'analyse de données : variables, listes et fonctions",
+                "Manipulé et analysé des données avec les DataFrames de pandas",
+                "Réalisé des visualisations de données avec Matplotlib et Seaborn",
+                "Appliqué des concepts statistiques et des techniques d'exploration de données (EDA)",
+                "Travaillé sur des projets réels incluant nettoyage, fusion et analyse de données"
             ]
         }
     },
