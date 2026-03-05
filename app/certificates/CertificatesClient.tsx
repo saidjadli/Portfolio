@@ -160,7 +160,7 @@ export function CertificatesClient({ certificates }: CertificatesClientProps) {
 
             {filteredCertificates.length === 0 && (
                 <div className="text-center py-20 text-gray-500">
-                    No certificates found. Try adjusting your filters.
+                    No certificates found.
                 </div>
             )}
 
