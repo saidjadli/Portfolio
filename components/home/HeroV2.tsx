@@ -111,7 +111,7 @@ export function HeroV2() {
                                         clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"
                                     }}>
                                     <Image
-                                        src="/images/photo_profil.jpg"
+                                        src="/images/image.png"
                                         alt="Said Jadli - Data Scientist"
                                         fill
                                         className="object-cover object-top hover:scale-105 transition-transform duration-700"
