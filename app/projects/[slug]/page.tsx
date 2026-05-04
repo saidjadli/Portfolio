@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Github, ExternalLink, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
+import { ProjectGallery, ProjectHeroImage } from "@/components/projects/ProjectDetailImages";
 
 export async function generateStaticParams() {
     const projects = await getProjects();
@@ -28,6 +29,9 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
     if (!project) {
         notFound();
     }
+
+    const heroImage = project.image ?? project.coverImage;
+    const gallery = project.gallery ?? [];
 
     return (
         <article className="container px-4 md:px-6 py-20 max-w-4xl mx-auto">
@@ -71,6 +75,8 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                         </Badge>
                     ))}
                 </div>
+
+                <ProjectHeroImage title={project.title} heroImage={heroImage} />
             </div>
 
             {project.details && (
@@ -78,14 +84,14 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-white">The Problem</h2>
                         <Card className="bg-transparent border-white/5">
-                            <p className="text-gray-300 leading-relaxed">{project.details.problem}</p>
+                            <p className="text-gray-300 leading-relaxed whitespace-pre-line">{project.details.problem}</p>
                         </Card>
                     </section>
 
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-white">Approach & Pipeline</h2>
                         <Card className="bg-transparent border-white/5">
-                            <p className="text-gray-300 leading-relaxed">{project.details.approach}</p>
+                            <p className="text-gray-300 leading-relaxed whitespace-pre-line">{project.details.approach}</p>
                         </Card>
                     </section>
 
@@ -93,20 +99,22 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                         <section>
                             <h2 className="text-2xl font-bold mb-4 text-white">Dataset</h2>
                             <Card className="bg-transparent border-white/5 h-full">
-                                <p className="text-gray-300 leading-relaxed">{project.details.dataset}</p>
+                                <p className="text-gray-300 leading-relaxed whitespace-pre-line">{project.details.dataset}</p>
                             </Card>
                         </section>
                         <section>
                             <h2 className="text-2xl font-bold mb-4 text-white">Results</h2>
                             <Card className="bg-transparent border-primary/20 bg-primary/5 h-full">
-                                <p className="text-gray-200 leading-relaxed">{project.details.results}</p>
+                                <p className="text-gray-200 leading-relaxed whitespace-pre-line">{project.details.results}</p>
                             </Card>
                         </section>
                     </div>
 
+                    <ProjectGallery title={project.title} gallery={gallery} />
+
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-white">Limitations</h2>
-                        <p className="text-gray-400 italic">{project.details.limitations}</p>
+                        <p className="text-gray-400 italic whitespace-pre-line">{project.details.limitations}</p>
                     </section>
                 </div>
             )}

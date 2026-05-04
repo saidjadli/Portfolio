@@ -1,5 +1,44 @@
 [
     {
+        "slug": "real-time-credit-fraud-detection-platform",
+        "title": "Real-Time Credit Fraud Detection Platform",
+        "summary": "End-to-end Big Data platform for real-time credit card fraud detection using Kafka, Spark Structured Streaming, PostgreSQL, Airflow, Streamlit, and a hybrid ML-based scoring engine.",
+        "category": "Machine Learning",
+        "tags": [
+            "Kafka",
+            "Apache Spark",
+            "Spark Structured Streaming",
+            "PostgreSQL",
+            "Apache Airflow",
+            "Streamlit",
+            "Machine Learning",
+            "Random Forest",
+            "Docker",
+            "Big Data",
+            "Fraud Detection",
+            "Python"
+        ],
+        "date": "May 2026",
+        "githubUrl": "https://github.com/saidjadli/Credit-Fraud-Detection",
+        "demoUrl": null,
+        "featured": true,
+        "image": "/projects/credit-fraud-detection/dashboard_overview.png",
+        "gallery": [
+            "/projects/credit-fraud-detection/architecture.png",
+            "/projects/credit-fraud-detection/dashboard_overview.png",
+            "/projects/credit-fraud-detection/model_evaluation.png",
+            "/projects/credit-fraud-detection/airflow_dags.png",
+            "/projects/credit-fraud-detection/kafka_messages.png"
+        ],
+        "details": {
+            "problem": "Financial transactions must be monitored in real time to detect suspicious behavior before fraudulent activity causes financial loss. Traditional batch processing is too slow, while simple rule-based systems are often rigid and unable to adapt to complex fraud patterns.",
+            "dataset": "Used the Credit Card Fraud Detection dataset with anonymized PCA features V1 to V28, Time, Amount, and Class. The dataset was replayed as a streaming source and enriched with simulated business fields such as user ID, country, usual country, merchant category, payment method, device ID, and IP address.",
+            "approach": "Built an end-to-end real-time fraud detection platform that ingests transaction streams through Apache Kafka, processes them with Spark Structured Streaming, applies a hybrid fraud detection engine combining rule-based scoring, behavior analysis, and Machine Learning probability, then stores results in PostgreSQL and visualizes fraud insights in a Streamlit dashboard. The platform also includes Apache Airflow workflows for reporting, data quality checks, alert repair, and model evaluation.\n\nImplemented a complete real-time data pipeline:\n1. A Python producer replays credit card transactions and sends JSON messages to Kafka.\n2. Spark Structured Streaming consumes the transactions_raw topic.\n3. Spark parses, cleans, and enriches each transaction.\n4. A hybrid detection engine calculates rule-based score, behavior score, ML fraud probability, and final hybrid score.\n5. Transactions are classified as NORMAL, SUSPICIOUS, or FRAUD.\n6. Results are stored in PostgreSQL.\n7. Streamlit displays real-time KPIs, fraud trends, alerts, and model evaluation.\n8. Airflow generates reports, checks data quality, repairs missing alerts, and exports model evaluation metrics.",
+            "results": "The system successfully detects normal, suspicious, and fraudulent transactions in real time. The dashboard includes fraud KPIs, hybrid score distributions, ML probability analysis, alert tables, and a Model Evaluation section with precision, recall, F1-score, accuracy, true positives, false positives, true negatives, and false negatives.\n\nExample observed evaluation:\n- True positives: 168\n- False positives: 38\n- True negatives: 521\n- False negatives: 0\n- Precision: 81.55%\n- Recall: 100%\n- F1-score: 89.84%\n- Accuracy: 94.77%",
+            "limitations": "The dataset features are anonymized, so some business fields are simulated. The fraud replay ratio is adjusted for demonstration. The system is not connected to a real banking API, and production-grade authentication, monitoring, and model registry are future improvements."
+        }
+    },
+    {
         "slug": "satellite-image-super-resolution",
         "title": "Satellite Image Super-Resolution using Deep Learning",
         "summary": "Developed a 4x super-resolution system for satellite imagery using advanced GAN and CNN architectures.",
@@ -15,6 +54,13 @@
         "githubUrl": "https://github.com/saidjadli/Satellite_Super_Resulotion0",
         "demoUrl": null,
         "featured": true,
+        "image": "/projects/Satellite-Image-Super-Resolution/result.png",
+        "gallery": [
+            "/projects/Satellite-Image-Super-Resolution/project-gallery0.png",
+            "/projects/Satellite-Image-Super-Resolution/project-gallery1.png",
+            "/projects/Satellite-Image-Super-Resolution/project-gallery2.png",
+            "/projects/Satellite-Image-Super-Resolution/project-gallery3.png"
+        ],
         "details": {
             "problem": "Low-resolution satellite imagery limits the accuracy of remote sensing applications such as urban planning and environmental monitoring.",
             "dataset": "Standard super-resolution benchmark datasets (Div2K, Flickr2K) adapted for satellite imagery.",
@@ -38,6 +84,14 @@
         "githubUrl": "https://github.com/saidjadli/Licence-Plate-Recognition",
         "demoUrl": null,
         "featured": true,
+        "image": "/projects/Automatic-License-Plate-Recognition/result.png",
+        "gallery": [
+            "/projects/Automatic-License-Plate-Recognition/project-gallery0.png",
+            "/projects/Automatic-License-Plate-Recognition/project-gallery1.png",
+            "/projects/Automatic-License-Plate-Recognition/project-gallery2.png",
+            "/projects/Automatic-License-Plate-Recognition/project-gallery3.png",
+            "/projects/Automatic-License-Plate-Recognition/project-gallery4.png"
+        ],
         "details": {
             "problem": "Manual vehicle tracking is inefficient and prone to errors. Automated systems need to be robust to varying lighting and angles.",
             "dataset": "Custom dataset of vehicle images collected under various conditions, annotated for license plate detection.",
@@ -61,6 +115,12 @@
         "githubUrl": "https://github.com/saidjadli/Rain-in-Australia-Prediction",
         "demoUrl": null,
         "featured": true,
+        "image": "/projects/Rainfall Prediction/result.png",
+        "gallery": [
+            "/projects/Rainfall Prediction/project-gallery0.png",
+            "/projects/Rainfall Prediction/project-gallery1.png",
+            "/projects/Rainfall Prediction/project-gallery2.png"
+        ],
         "details": {
             "problem": "Accurate rainfall prediction is crucial for agriculture and water resource management.",
             "dataset": "Rain in Australia dataset containing daily weather observations from numerous weather stations.",

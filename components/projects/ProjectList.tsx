@@ -2,11 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { Project } from "@/lib/types";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
-import { Github, ExternalLink, Search } from "lucide-react";
+import { ProjectCard } from "@/components/projects/ProjectCard";
+import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 
@@ -77,35 +74,7 @@ export function ProjectList({ initialProjects }: ProjectListProps) {
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Link href={`/projects/${project.slug}`} className="block h-full group">
-                                <Card hoverEffect className="h-full flex flex-col">
-                                    <div className="flex justify-between items-start mb-4">
-                                        <div className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">
-                                            {project.category}
-                                        </div>
-                                        <div className="flex gap-2 text-gray-400">
-                                            {project.githubUrl && <Github size={16} />}
-                                            {project.demoUrl && <ExternalLink size={16} />}
-                                        </div>
-                                    </div>
-
-                                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                        {project.title}
-                                    </h3>
-
-                                    <p className="text-gray-400 text-sm mb-6 flex-grow line-clamp-3">
-                                        {project.summary}
-                                    </p>
-
-                                    <div className="flex flex-wrap gap-2 mt-auto">
-                                        {project.tags.slice(0, 4).map((tag) => (
-                                            <Badge key={tag} variant="outline" className="text-xs">
-                                                {tag}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                </Card>
-                            </Link>
+                            <ProjectCard project={project} />
                         </motion.div>
                     ))}
                 </AnimatePresence>

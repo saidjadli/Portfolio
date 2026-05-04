@@ -8,6 +8,8 @@ export interface Project {
     githubUrl?: string;
     demoUrl?: string | null;
     featured: boolean;
+    image?: string;
+    gallery?: string[];
     coverImage?: string;
     details?: {
         problem: string;
