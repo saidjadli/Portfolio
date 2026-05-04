@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import { Certificate } from "@/lib/types";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ZoomIn } from "lucide-react";
+import { ZoomIn } from "lucide-react";
+import { ImageLightbox } from "@/components/ui/ImageLightbox";
 
 interface CertificatesClientProps {
     certificates: Certificate[];
@@ -17,31 +18,6 @@ export function CertificatesClient({ certificates }: CertificatesClientProps) {
     const [filter, setFilter] = useState<string>("All");
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const { t, language } = useTranslation();
-
-    // Handle ESC key to close modal
-    useEffect(() => {
-        const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === "Escape" && selectedImage) {
-                setSelectedImage(null);
-            }
-        };
-
-        window.addEventListener("keydown", handleEscape);
-        return () => window.removeEventListener("keydown", handleEscape);
-    }, [selectedImage]);
-
-    // Prevent body scroll when modal is open
-    useEffect(() => {
-        if (selectedImage) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-
-        return () => {
-            document.body.style.overflow = "unset";
-        };
-    }, [selectedImage]);
 
     const categories = [
         "All",
@@ -164,45 +140,11 @@ export function CertificatesClient({ certificates }: CertificatesClientProps) {
                 </div>
             )}
 
-            {/* Lightbox Modal */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
-                        onClick={() => setSelectedImage(null)}
-                    >
-                        {/* Close Button */}
-                        <button
-                            onClick={() => setSelectedImage(null)}
-                            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                            aria-label="Close modal"
-                        >
-                            <X className="w-6 h-6" />
-                        </button>
-
-                        {/* Certificate Image */}
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="relative max-w-6xl max-h-[90vh] w-full h-full"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <Image
-                                src={selectedImage}
-                                alt="Certificate"
-                                fill
-                                className="object-contain rounded-lg"
-                            />
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <ImageLightbox
+                src={selectedImage}
+                alt="Certificate"
+                onClose={() => setSelectedImage(null)}
+            />
         </div>
     );
 }
