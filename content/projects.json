@@ -3,7 +3,7 @@
         "slug": "real-time-credit-fraud-detection-platform",
         "title": "Real-Time Credit Fraud Detection Platform",
         "summary": "End-to-end Big Data platform for real-time credit card fraud detection using Kafka, Spark Structured Streaming, PostgreSQL, Airflow, Streamlit, and a hybrid ML-based scoring engine.",
-        "category": "Machine Learning",
+        "category": "Big Data",
         "tags": [
             "Kafka",
             "Apache Spark",
@@ -42,7 +42,7 @@
         "slug": "satellite-image-super-resolution",
         "title": "Satellite Image Super-Resolution using Deep Learning",
         "summary": "Developed a 4x super-resolution system for satellite imagery using advanced GAN and CNN architectures.",
-        "category": "Computer Vision",
+        "category": "Deep Learning",
         "tags": [
             "PyTorch",
             "SRCNN",
