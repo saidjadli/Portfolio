@@ -6,6 +6,9 @@ const config: Config = {
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+        container: {
+            center: true,
+        },
         extend: {
             colors: {
                 background: "#0B0F0E",

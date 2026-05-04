@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 interface FeaturedProjectsProps {
     projects: Project[];
@@ -12,7 +13,7 @@ interface FeaturedProjectsProps {
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
     return (
         <section className="py-20" id="projects">
-            <div className="container px-4 md:px-6">
+            <SectionContainer>
                 <div className="flex justify-between items-end mb-10">
                     <SectionHeading title="Featured Projects" subtitle="Selected works demonstrating technical depth and impact." />
                     <Link href="/projects" className="hidden md:inline-block">
@@ -33,7 +34,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                         <Button variant="outline">View All Projects</Button>
                     </Link>
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

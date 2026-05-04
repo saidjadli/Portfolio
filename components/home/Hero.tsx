@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 export function Hero() {
     return (
@@ -12,7 +13,7 @@ export function Hero() {
             <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10" />
             <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] -z-10" />
 
-            <div className="container px-4 md:px-6 flex flex-col items-center text-center z-10">
+            <SectionContainer className="flex flex-col items-center text-center z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -79,7 +80,7 @@ export function Hero() {
                         <Mail className="h-6 w-6" />
                     </a>
                 </motion.div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

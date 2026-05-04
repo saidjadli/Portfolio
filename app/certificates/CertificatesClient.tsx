@@ -9,6 +9,7 @@ import { useTranslation } from "@/components/i18n/LanguageProvider";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZoomIn } from "lucide-react";
 import { ImageLightbox } from "@/components/ui/ImageLightbox";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 interface CertificatesClientProps {
     certificates: Certificate[];
@@ -48,7 +49,7 @@ export function CertificatesClient({ certificates }: CertificatesClientProps) {
     };
 
     return (
-        <div className="container px-4 md:px-6 py-20">
+        <SectionContainer className="py-20">
             <SectionHeading
                 title={t("certificates.title")}
                 subtitle={t("certificates.subtitle")}
@@ -145,6 +146,6 @@ export function CertificatesClient({ certificates }: CertificatesClientProps) {
                 alt="Certificate"
                 onClose={() => setSelectedImage(null)}
             />
-        </div>
+        </SectionContainer>
     );
 }

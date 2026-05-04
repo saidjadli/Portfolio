@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Mail, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -105,7 +106,7 @@ type Status = "idle" | "loading" | "success" | "error";
     };
 
     return (
-        <div className="container px-4 md:px-6 py-20 max-w-4xl mx-auto">
+        <SectionContainer maxWidth="4xl" className="py-20">
         <SectionHeading title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -249,6 +250,6 @@ type Status = "idle" | "loading" | "success" | "error";
                 )}
             </Card>
             </div>
-        </div>
+        </SectionContainer>
     );
 }

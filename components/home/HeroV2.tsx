@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail, Play, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 export function HeroV2() {
     const { t } = useTranslation();
@@ -20,7 +21,7 @@ export function HeroV2() {
                 <div className="absolute top-[20%] right-[20%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container px-4 md:px-6 z-10">
+            <SectionContainer className="z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
                     {/* Left Column: Text Content */}
@@ -136,7 +137,7 @@ export function HeroV2() {
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

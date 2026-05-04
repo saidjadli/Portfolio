@@ -6,6 +6,7 @@ import { Download, Send, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 export function AboutSection() {
     const { t } = useTranslation();
@@ -22,7 +23,7 @@ export function AboutSection() {
             <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10" />
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10" />
 
-            <div className="container px-4 md:px-6">
+            <SectionContainer>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start">
 
                     {/* Left Column: Text Content */}
@@ -73,7 +74,7 @@ export function AboutSection() {
                     </motion.div>
 
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

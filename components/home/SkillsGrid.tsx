@@ -2,6 +2,7 @@ import { SkillCategory } from "@/lib/types";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 interface SkillsGridProps {
     skills: SkillCategory[];
@@ -10,7 +11,7 @@ interface SkillsGridProps {
 export function SkillsGrid({ skills }: SkillsGridProps) {
     return (
         <section className="py-20 bg-white/5" id="skills">
-            <div className="container px-4 md:px-6">
+            <SectionContainer>
                 <SectionHeading title="Technical Skills" subtitle="Tools and technologies I work with." align="left" />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -29,7 +30,7 @@ export function SkillsGrid({ skills }: SkillsGridProps) {
                         </Card>
                     ))}
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

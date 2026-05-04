@@ -6,6 +6,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { Great_Vibes } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 const greatVibes = Great_Vibes({
     weight: "400",
@@ -17,7 +18,7 @@ export function Footer() {
 
     return (
         <footer className="border-t border-white/5 bg-black/20 py-12 mt-20">
-            <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <SectionContainer className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex flex-col items-center md:items-start gap-2">
                     <Link href="/" className="flex items-center gap-2">
                         <span className={cn(greatVibes.className, "text-2xl md:text-3xl text-white drop-shadow-[0_0_10px_rgba(34,197,94,0.3)]")}>
@@ -53,7 +54,7 @@ export function Footer() {
                         <Mail size={20} />
                     </a>
                 </div>
-            </div>
+            </SectionContainer>
         </footer>
     );
 }

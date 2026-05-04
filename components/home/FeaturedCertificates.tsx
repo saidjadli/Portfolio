@@ -10,6 +10,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 import { motion } from "framer-motion";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 interface FeaturedCertificatesProps {
     certificates: Certificate[];
@@ -20,7 +21,7 @@ export function FeaturedCertificates({ certificates }: FeaturedCertificatesProps
 
     return (
         <section className="py-20" id="certificates">
-            <div className="container px-4 md:px-6">
+            <SectionContainer>
                 <div className="flex justify-between items-end mb-10">
                     <SectionHeading
                         title={t("certificates.featuredTitle")}
@@ -83,7 +84,7 @@ export function FeaturedCertificates({ certificates }: FeaturedCertificatesProps
                         <Button variant="outline">{t("certificates.viewAll")}</Button>
                     </Link>
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

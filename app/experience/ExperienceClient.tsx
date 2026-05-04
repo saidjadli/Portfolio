@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 import { Experience, Education } from "@/lib/types";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 interface ExperienceClientProps {
     experience: Experience[];
@@ -15,7 +16,7 @@ export function ExperienceClient({ experience, education }: ExperienceClientProp
     const { t } = useTranslation();
 
     return (
-        <div className="container px-4 md:px-6 py-20">
+        <SectionContainer className="py-20">
             <SectionHeading title={t("experience.title")} subtitle={t("experience.subtitle")} />
 
             <div className="grid lg:grid-cols-3 gap-12">
@@ -75,6 +76,6 @@ export function ExperienceClient({ experience, education }: ExperienceClientProp
                     </div>
                 </div>
             </div>
-        </div>
+        </SectionContainer>
     );
 }

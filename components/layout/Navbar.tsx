@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 const greatVibes = Great_Vibes({
     weight: "400",
@@ -44,7 +45,7 @@ export function Navbar() {
                 scrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
             )}
         >
-            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+            <SectionContainer className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
                     <span className={cn(greatVibes.className, "text-2xl md:text-3xl text-white drop-shadow-[0_0_10px_rgba(34,197,94,0.3)]")}>
                         Said Jadli
@@ -81,7 +82,7 @@ export function Navbar() {
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
-            </div>
+            </SectionContainer>
 
             {/* Mobile Menu */}
             <AnimatePresence>

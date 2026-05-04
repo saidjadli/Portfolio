@@ -34,7 +34,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
     const gallery = project.gallery ?? [];
 
     return (
-        <article className="container px-4 md:px-6 py-20 max-w-4xl mx-auto">
+        <article className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-20">
             <Link href="/projects" className="inline-flex items-center text-gray-400 hover:text-primary mb-8 transition-colors">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
             </Link>

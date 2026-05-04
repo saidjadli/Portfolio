@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 interface ExperiencePreviewProps {
     experience: Experience[];
@@ -12,7 +13,7 @@ interface ExperiencePreviewProps {
 export function ExperiencePreview({ experience }: ExperiencePreviewProps) {
     return (
         <section className="py-20" id="experience">
-            <div className="container px-4 md:px-6">
+            <SectionContainer>
                 <SectionHeading title="Experience" subtitle="My professional journey." align="left" />
 
                 <div className="relative border-l border-white/10 ml-3 md:ml-6 space-y-12">
@@ -54,7 +55,7 @@ export function ExperiencePreview({ experience }: ExperiencePreviewProps) {
                         <Button variant="outline">View Full Resume</Button>
                     </Link>
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 }

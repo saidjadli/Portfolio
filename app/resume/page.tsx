@@ -4,10 +4,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Download, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { SectionContainer } from "@/components/layout/SectionContainer";
 
 export default function ResumePage() {
     return (
-        <div className="container px-4 md:px-6 py-20 max-w-5xl mx-auto min-h-screen flex flex-col">
+        <SectionContainer maxWidth="5xl" className="py-20 min-h-screen flex flex-col">
             <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
                 <Link href="/" className="self-start">
                     <Button variant="ghost" className="pl-0 gap-2 hover:bg-transparent hover:text-primary">
@@ -39,6 +40,6 @@ export default function ResumePage() {
                     </div>
                 </iframe>
             </div>
-        </div>
+        </SectionContainer>
     );
 }
