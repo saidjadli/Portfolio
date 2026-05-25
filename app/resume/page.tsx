@@ -5,8 +5,13 @@ import { Button } from "@/components/ui/Button";
 import { Download, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { SectionContainer } from "@/components/layout/SectionContainer";
+import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { getResumeUrl } from "@/lib/resume";
 
 export default function ResumePage() {
+    const { language } = useTranslation();
+    const resumeUrl = getResumeUrl(language);
+
     return (
         <SectionContainer maxWidth="5xl" className="py-20 min-h-screen flex flex-col">
             <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
@@ -15,7 +20,7 @@ export default function ResumePage() {
                         <ArrowLeft size={16} /> Back to Home
                     </Button>
                 </Link>
-                <a href="/resume/said_jadli_CV.pdf" download target="_blank">
+                <a href={resumeUrl} download target="_blank">
                     <Button size="lg" className="gap-2">
                         <Download size={16} /> Download PDF
                     </Button>
@@ -26,7 +31,7 @@ export default function ResumePage() {
 
             <div className="flex-grow bg-white/5 rounded-2xl overflow-hidden border border-white/10 h-[800px] md:h-[1000px]">
                 <iframe
-                    src="/resume/said_jadli_CV.pdf"
+                    src={resumeUrl}
                     className="w-full h-full"
                     title="Jadli Said Resume"
                 >
@@ -34,7 +39,7 @@ export default function ResumePage() {
                         <p className="text-gray-400 mb-4">
                             Your browser doesn't support embedding PDFs.
                         </p>
-                        <a href="/resume/said_jadli_CV.pdf" download target="_blank">
+                        <a href={resumeUrl} download target="_blank">
                             <Button>Download Resume</Button>
                         </a>
                     </div>

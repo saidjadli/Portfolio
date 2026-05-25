@@ -8,9 +8,11 @@ import { ArrowRight, Download, Github, Linkedin, Mail, Play, Send } from "lucide
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 import { SectionContainer } from "@/components/layout/SectionContainer";
+import { getResumeUrl } from "@/lib/resume";
 
 export function HeroV2() {
-    const { t } = useTranslation();
+    const { t, language } = useTranslation();
+    const resumeUrl = getResumeUrl(language);
 
     return (
         <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 lg:py-0">
@@ -63,7 +65,7 @@ export function HeroV2() {
                             transition={{ delay: 0.6, duration: 0.5 }}
                             className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto"
                         >
-                            <a href="/resume/said_jadli_CV.pdf" target="_blank" download className="w-full sm:w-auto">
+                            <a href={resumeUrl} target="_blank" download className="w-full sm:w-auto">
                                 <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base font-semibold group relative overflow-hidden">
                                     <span className="relative z-10 flex items-center">
                                         {t("hero.btnDownload")}

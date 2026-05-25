@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/components/i18n/LanguageProvider";
 import { SectionContainer } from "@/components/layout/SectionContainer";
+import { getResumeUrl } from "@/lib/resume";
 
 const greatVibes = Great_Vibes({
     weight: "400",
@@ -20,7 +21,8 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
-    const { t } = useTranslation();
+    const { t, language } = useTranslation();
+    const resumeUrl = getResumeUrl(language);
 
     const navItems = [
         { name: t("navbar.home"), href: "/" },
@@ -67,7 +69,7 @@ export function Navbar() {
                         </Link>
                     ))}
                     <Link
-                        href="/resume/said_jadli_CV.pdf"
+                        href={resumeUrl}
                         className="px-4 py-2 border border-primary/20 rounded-lg text-primary text-sm font-medium hover:bg-primary/10 transition-colors"
                         target="_blank"
                     >
@@ -108,9 +110,10 @@ export function Navbar() {
                                 </Link>
                             ))}
                             <Link
-                                href="/resume/said_jadli_CV.pdf"
+                                href={resumeUrl}
                                 className="inline-block text-center py-3 border border-primary/20 rounded-lg text-primary font-medium hover:bg-primary/10 transition-colors"
                                 onClick={() => setIsOpen(false)}
+                                target="_blank"
                             >
                                 {t("navbar.downloadResume")}
                             </Link>

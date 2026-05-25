@@ -5,8 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { SectionContainer } from "@/components/layout/SectionContainer";
+import { useTranslation } from "@/components/i18n/LanguageProvider";
+import { getResumeUrl } from "@/lib/resume";
 
 export function Hero() {
+    const { language } = useTranslation();
+    const resumeUrl = getResumeUrl(language);
+
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-10">
             {/* Background Glow */}
@@ -56,7 +61,7 @@ export function Hero() {
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </Link>
-                    <a href="/resume/said_jadli_CV.pdf" target="_blank" download>
+                    <a href={resumeUrl} target="_blank" download>
                         <Button variant="outline" size="lg">
                             Download CV
                             <Download className="ml-2 h-4 w-4" />
