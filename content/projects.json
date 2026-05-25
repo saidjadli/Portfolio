@@ -1,5 +1,46 @@
 [
     {
+        "slug": "cyber-intelligence",
+        "title": "Cyber Intelligence Platform",
+        "summary": "End-to-end platform for collecting public web content, analyzing information risk signals with Spark, NLP, graph mining, and exposing alerts through FastAPI and Streamlit.",
+        "category": "Big Data",
+        "tags": [
+            "Scrapy",
+            "Apache Spark",
+            "PySpark",
+            "MongoDB",
+            "Neo4j",
+            "FastAPI",
+            "Streamlit",
+            "NLP",
+            "Hugging Face",
+            "NetworkX",
+            "Docker",
+            "Graph Mining",
+            "Python"
+        ],
+        "date": "May 2026",
+        "githubUrl": "https://github.com/saidjadli/cyber-intelligence",
+        "demoUrl": null,
+        "featured": false,
+        "image": "/projects/cyber-intelligence/result.png",
+        "gallery": [
+            "/projects/cyber-intelligence/project-gallery0.png",
+            "/projects/cyber-intelligence/project-gallery1.png",
+            "/projects/cyber-intelligence/project-gallery2.png",
+            "/projects/cyber-intelligence/project-gallery3.png",
+            "/projects/cyber-intelligence/project-gallery4.png",
+            "/projects/cyber-intelligence/project-gallery5.png"
+        ],
+        "details": {
+            "problem": "Public information streams are massive, heterogeneous, and difficult to analyze manually. Analysts need a way to detect signals such as toxic content, political polarization, suspicious narratives, graph-based coordination, and abnormal publishing behavior across articles, sources, authors, and comments.",
+            "dataset": "The platform collects articles from configurable news sources such as AP News, USA Today, NBC News, Breitbart, and Radio-Canada, plus YouTube metadata and comments by keyword. Raw documents are stored in MongoDB, then enriched into Spark collections for preprocessed articles, analyzed comments, graph nodes and edges, usage signals, temporal anomalies, intelligence scores, and final alerts.",
+            "approach": "Designed a modular cyber-intelligence architecture with MongoDB as the central persistence layer and Docker Compose for local orchestration. Scrapy spiders collect source-specific articles through JSON configurations, while an optional YouTube collector expands the corpus with video metadata and comments.\n\nImplemented a five-stage Apache Spark pipeline:\n1. Preprocess raw articles by cleaning HTML, normalizing text, detecting language, deduplicating content, extracting links, and identifying named entities.\n2. Run web content mining with toxicity scoring, polarization analysis, sentiment analysis, zero-shot topic classification, suspicious narrative detection, and optional AI-generated text detection.\n3. Build a heterogeneous graph connecting sources, articles, authors, named entities, citations, and co-occurrences, then compute centrality and relational risk scores.\n4. Analyze usage patterns such as source activity, author activity, propagation speed, and temporal anomalies using statistical signals.\n5. Fuse content, graph, and usage signals into final intelligence scores and severity-ranked alerts.\n\nExposed the enriched data through a FastAPI REST API and built an interactive Streamlit dashboard for KPIs, score distributions, graph exploration, anomalies, alerts, and MongoDB collection inspection.",
+            "results": "The system produces actionable cyber-intelligence indicators across multiple analysis dimensions. The dashboard summarizes 451 scored articles, 3,939 generated alerts, 4 monitored sources, 5,000 authors, and 1,113 detected anomalies. It also provides explainable alert reasons, severity distributions, topic analysis, usage anomalies, and direct exploration of the MongoDB collections produced by the Spark pipeline.",
+            "limitations": "The quality of the scores depends on the diversity and volume of collected content. Scrapy selectors require maintenance when websites change their HTML structure. Local NLP inference can be memory intensive without GPU resources, so the pipeline includes heuristic fallback modes. The generated risk scores are decision-support indicators and still require human interpretation to avoid false positives."
+        }
+    },
+    {
         "slug": "real-time-credit-fraud-detection-platform",
         "title": "Real-Time Credit Fraud Detection Platform",
         "summary": "End-to-end Big Data platform for real-time credit card fraud detection using Kafka, Spark Structured Streaming, PostgreSQL, Airflow, Streamlit, and a hybrid ML-based scoring engine.",
