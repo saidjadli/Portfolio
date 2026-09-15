@@ -1,5 +1,31 @@
 [
     {
+        "id": "exp-2",
+        "role": "PFA Internship",
+        "company": "Kifcom 360",
+        "location": "Marrakech",
+        "startDate": "2026",
+        "endDate": "2026",
+        "current": false,
+        "description": [
+            "Designed and developed a multi-source E-commerce Intelligence platform integrating Google Analytics 4, Meta Ads, and Shopify to centralize and analyze business data.",
+            "Automated data collection and analysis through ETL pipelines and KPI dashboards to provide unified insights on marketing performance, traffic, and e-commerce activities.",
+            "Integrated LLM-based AI insights and anomaly detection to support business analysis and decision-making."
+        ],
+        "tech": [
+            "Python",
+            "FastAPI",
+            "Next.js",
+            "PostgreSQL",
+            "SQLAlchemy",
+            "Docker",
+            "GA4 Data API",
+            "Meta Marketing API",
+            "Groq",
+            "LLM-based AI"
+        ]
+    },
+    {
         "id": "exp-1",
         "role": "Internship",
         "company": "Startup NHANCIT",
