@@ -35,13 +35,13 @@
         "current": false,
         "description": [
             "Designed and built an LLM-based chatbot prototype to analyze and interpret employee behavior data.",
-            "Integrated advanced language models (Gemma-3-12B) to process key behavioral indicators (KBI).",
+            "Integrated advanced language models (GPT-OSS-20B) to process key behavioral indicators (KBI).",
             "Automated the generation of insights from internal reporting data using RAG and NL2SQL techniques."
         ],
         "tech": [
             "Python",
             "LangChain",
-            "Gemma-3-12B",
+            "GPT-OSS-20B",
             "Streamlit",
             "FastAPI",
             "MySQL",
