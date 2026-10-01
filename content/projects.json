@@ -1,5 +1,43 @@
 [
     {
+        "slug": "enterprise-knowledge-assistant",
+        "title": "Enterprise Knowledge Assistant",
+        "summary": "Production-oriented Generative AI assistant for enterprise knowledge retrieval using RAG, semantic search, conversational memory, and Dockerized deployment.",
+        "category": "Generative AI",
+        "tags": [
+            "RAG",
+            "FastAPI",
+            "Streamlit",
+            "LangChain",
+            "ChromaDB",
+            "Redis",
+            "SQLite",
+            "Hugging Face",
+            "Groq",
+            "JWT",
+            "Docker",
+            "Python"
+        ],
+        "date": "Sep 2026",
+        "githubUrl": "https://github.com/saidjadli/enterprise-ai-assistant",
+        "demoUrl": null,
+        "featured": true,
+        "image": "/projects/enterprise-knowledge-assistant/chat.png",
+        "gallery": [
+            "/projects/enterprise-knowledge-assistant/architecture.png",
+            "/projects/enterprise-knowledge-assistant/chat.png",
+            "/projects/enterprise-knowledge-assistant/documents.png",
+            "/projects/enterprise-knowledge-assistant/login.png"
+        ],
+        "details": {
+            "problem": "Enterprise employees often need to search through internal policies, procedures, and technical documents to find specific information. Traditional document search can be slow and does not provide contextual answers or a conversational interface.",
+            "dataset": "The knowledge base is composed of enterprise PDF documents such as security, network, cloud, and HR policies. Documents are uploaded through the application and transformed into searchable semantic representations.",
+            "approach": "Built an end-to-end RAG application with a Streamlit frontend and FastAPI backend. Implemented JWT authentication, persistent users and conversations with SQLite, short-term conversational memory with Redis, and document management with PDF upload and deletion.\n\nImplemented the RAG pipeline:\n1. Load and extract text from PDF documents.\n2. Clean and split documents into chunks.\n3. Generate semantic embeddings with a Hugging Face E5 model.\n4. Store document chunks and embeddings in ChromaDB.\n5. Rewrite conversational queries when additional context is required.\n6. Retrieve relevant document chunks using semantic similarity search.\n7. Build the context supplied to the LLM.\n8. Generate answers with the Groq LLM provider.\n9. Return document and page sources with the generated answer.\n\nContainerized the application with Docker Compose and separated the frontend, backend, and Redis services for reproducible deployment.",
+            "results": "The application provides authenticated employees with a conversational interface for querying enterprise documents, persistent conversation history, source-backed answers, and document upload/deletion workflows. The complete application can be run through Docker Compose with separate Streamlit, FastAPI, and Redis services.",
+            "limitations": "Answer quality depends on document quality, chunking, retrieval performance, and the selected LLM. The current deployment is containerized for reproducible local or server-based deployment; cloud infrastructure, enterprise SSO, advanced observability, and automated RAG evaluation remain future improvements."
+        }
+    },
+    {
         "slug": "cyber-intelligence",
         "title": "Cyber Intelligence Platform",
         "summary": "End-to-end platform for collecting public web content, analyzing information risk signals with Spark, NLP, graph mining, and exposing alerts through FastAPI and Streamlit.",
@@ -62,7 +100,7 @@
         "date": "May 2026",
         "githubUrl": "https://github.com/saidjadli/Credit-Fraud-Detection",
         "demoUrl": null,
-        "featured": true,
+        "featured": false,
         "image": "/projects/credit-fraud-detection/dashboard_overview.png",
         "gallery": [
             "/projects/credit-fraud-detection/architecture.png",
@@ -155,7 +193,7 @@
         "date": "Jan 2025",
         "githubUrl": "https://github.com/saidjadli/Rain-in-Australia-Prediction",
         "demoUrl": null,
-        "featured": true,
+        "featured": false,
         "image": "/projects/Rainfall Prediction/result.png",
         "gallery": [
             "/projects/Rainfall Prediction/project-gallery0.png",
